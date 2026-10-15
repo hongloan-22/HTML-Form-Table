@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Research Survey</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif;
+            background-color: #eef2f5;
+            color: #333333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .survey-card {
+            max-width: 650px;
+            margin: 20px auto;
+            background: #ffffff;
+            border-top: 6px solid #3498db;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+
+        .header {
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        .header h2 {
+            margin: 0 0 8px 0;
+            color: #2c3e50;
+            font-size: 24px;
+        }
+
+        .header p {
+            margin: 0;
+            color: #666666;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        label.field-label {
+            display: block;
+            font-weight: bold;
+            font-size: 14px;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        select, textarea, input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 14px;
+            background-color: #fafafa;
+        }
+
+        select:focus, textarea:focus, input[type="text"]:focus {
+            outline: none;
+            border-color: #3498db;
+            background-color: #ffffff;
+        }
+
+        .option-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .option-group label {
+            font-weight: normal;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        .btn-submit {
+            background-color: #3498db;
+            color: #ffffff;
+            border: none;
+            padding: 12px 25px;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .btn-submit:hover {
+            background-color: #2980b9;
+        }
+
+        .required {
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+
+<div class="survey-card">
+    <div class="header">
+        <h2>Market Research Survey</h2>
+        <p>Please take a few moments to complete this satisfaction survey.</p>
+    </div>
+
+    <form action="#" method="POST">
+        
+        <!-- Age -->
+        <div class="form-group">
+            <label class="field-label" for="age">What is your age range?</label>
+            <select id="age" name="age">
+                <option value="">-- Select Age Range --</option>
+                <option value="under_18">18 or under</option>
+                <option value="18_24">18 - 24</option>
+                <option value="25_34">25 - 34</option>
+                <option value="35_44">35 - 44</option>
+                <option value="45_54">45 - 54</option>
+                <option value="55_64">55 - 64</option>
+                <option value="65_over">65 or over</option>
+            </select>
+        </div>
+
+        <!-- Income -->
+        <div class="form-group">
+            <label class="field-label" for="income">What is your yearly income range?</label>
+            <select id="income" name="income">
+                <option value="">-- Select Income Range --</option>
+                <option value="under_25k">$0 - $24,999</option>
+                <option value="25k_49k">$25,000 - $49,999</option>
+                <option value="50k_74k">$50,000 - $74,999</option>
+                <option value="75k_99k">$75,000 - $99,999</option>
+                <option value="100k_149k">$100,000 - $149,999</option>
+                <option value="150k_over">$150,000 or more</option>
+            </select>
+        </div>
+
+        <!-- Gender -->
+        <div class="form-group">
+            <label class="field-label">Gender</label>
+            <div class="option-group">
+                <label><input type="radio" name="gender" value="male"> Male</label>
+                <label><input type="radio" name="gender" value="female"> Female</label>
+                <label><input type="radio" name="gender" value="non_binary"> Non-binary / Other</label>
+            </div>
+        </div>
+
+        <!-- Product Usage (Checkboxes) -->
+        <div class="form-group">
+            <label class="field-label">Which of the following products do you use? (Check all that apply)</label>
+            <div class="option-group">
+                <label><input type="checkbox" name="products" value="product_1"> Product 1</label>
+                <label><input type="checkbox" name="products" value="product_2"> Product 2</label>
+                <label><input type="checkbox" name="products" value="product_3"> Product 3</label>
+            </div>
+        </div>
+
+        <!-- Purchase Frequency -->
+        <div class="form-group">
+            <label class="field-label">How often do you purchase our products?</label>
+            <div class="option-group">
+                <label><input type="radio" name="frequency" value="daily"> Everyday</label>
+                <label><input type="radio" name="frequency" value="weekly"> Once a week</label>
+                <label><input type="radio" name="frequency" value="monthly"> Once a month</label>
+                <label><input type="radio" name="frequency" value="yearly"> Once a year</label>
+                <label><input type="radio" name="frequency" value="never"> Never</label>
+            </div>
+        </div>
+
+        <!-- Feedback / Comments -->
+        <div class="form-group">
+            <label class="field-label" for="feedback">What features would you like to see added in the future?</label>
+            <textarea id="feedback" name="feedback" placeholder="Write your suggestions here..."></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group">
+            <input type="submit" class="btn-submit" value="Submit Survey">
+        </div>
+
+    </form>
+</div>
+
+</body>
+</html>
